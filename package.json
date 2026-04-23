@@ -1,0 +1,15 @@
+{
+    "name": "com.annulusgames.litmotion",
+    "author": "annulusgames",
+    "displayName": "Lit Motion",
+    "description": "",
+    "unity": "2020.3",
+    "version": "2.0.0",
+    "keywords": [
+        "lit",
+        "motion",
+        "litmotion"
+    ],
+    "dependencies": {},
+    "repository": {}
+}
