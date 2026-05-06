@@ -62,7 +62,7 @@ namespace LitMotion.Editor
                 group.Add(new PropertyField(ease));
 
                 var customEaseCurve = new PropertyField(property.FindPropertyRelative("customEaseCurve"));
-                customEaseCurve.style.display = ease.enumValueIndex == (int)Ease.CustomAnimationCurve ? DisplayStyle.Flex : DisplayStyle.None;
+                customEaseCurve.style.display = ease.enumValueIndex == (int)LEase.CustomAnimationCurve ? DisplayStyle.Flex : DisplayStyle.None;
 
                 group.Add(customEaseCurve);
                 customEaseCurve.schedule
@@ -70,7 +70,7 @@ namespace LitMotion.Editor
                     {
                         try
                         {
-                            customEaseCurve.style.display = ease.enumValueIndex == (int)Ease.CustomAnimationCurve ? DisplayStyle.Flex : DisplayStyle.None;
+                            customEaseCurve.style.display = ease.enumValueIndex == (int)LEase.CustomAnimationCurve ? DisplayStyle.Flex : DisplayStyle.None;
                         }
                         catch (InvalidOperationException)
                         {

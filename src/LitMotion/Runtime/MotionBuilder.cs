@@ -79,7 +79,7 @@ namespace LitMotion
         public TValue EndValue;
         public TOptions Options;
         public float Duration;
-        public Ease Ease;
+        public LEase Ease;
         public MotionTimeKind TimeKind;
         public float Delay;
         public int Loops = 1;
@@ -131,7 +131,7 @@ namespace LitMotion
         /// <param name="ease">The type of easing</param>
         /// <returns>This builder to allow chaining multiple method calls.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly MotionBuilder<TValue, TOptions, TAdapter> WithEase(Ease ease)
+        public readonly MotionBuilder<TValue, TOptions, TAdapter> WithEase(LEase ease)
         {
             CheckEaseType(ease);
             CheckBuffer();
@@ -149,7 +149,7 @@ namespace LitMotion
         {
             CheckBuffer();
             buffer.AnimationCurve = animationCurve;
-            buffer.Ease = Ease.CustomAnimationCurve;
+            buffer.Ease = LEase.CustomAnimationCurve;
             return this;
         }
 
@@ -502,9 +502,9 @@ namespace LitMotion
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        readonly void CheckEaseType(Ease ease)
+        readonly void CheckEaseType(LEase ease)
         {
-            if (ease is Ease.CustomAnimationCurve) throw new ArgumentException($"Ease.{ease} cannot be specified directly.");
+            if (ease is LEase.CustomAnimationCurve) throw new ArgumentException($"Ease.{ease} cannot be specified directly.");
         }
     }
 }

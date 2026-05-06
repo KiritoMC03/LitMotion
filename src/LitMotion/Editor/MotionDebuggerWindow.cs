@@ -184,7 +184,7 @@ namespace LitMotion.Editor
 
                         EditorGUILayout.Space(4);
                         GenericField("Ease", parameters.Ease);
-                        if (parameters.Ease is Ease.CustomAnimationCurve)
+                        if (parameters.Ease is LEase.CustomAnimationCurve)
                         {
                             GenericField("Custom Ease Curve", parameters.AnimationCurve);
                         }

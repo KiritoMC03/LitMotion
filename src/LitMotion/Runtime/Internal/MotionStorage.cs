@@ -105,7 +105,7 @@ namespace LitMotion
             dataRef.EndValue = buffer.EndValue;
             dataRef.Options = buffer.Options;
 
-            if (buffer.Ease == Ease.CustomAnimationCurve)
+            if (buffer.Ease == LEase.CustomAnimationCurve)
             {
                 if (parameters.AnimationCurve.IsCreated)
                 {
@@ -147,7 +147,7 @@ namespace LitMotion
                         {
                             Progress = parameters.Ease switch
                             {
-                                Ease.CustomAnimationCurve => buffer.AnimationCurve.Evaluate(0f),
+                                LEase.CustomAnimationCurve => buffer.AnimationCurve.Evaluate(0f),
                                 _ => EaseUtility.Evaluate(0f, parameters.Ease)
                             },
                             Time = state.Time,

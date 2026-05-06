@@ -30,7 +30,7 @@ namespace LitMotion
         public struct MotionParameters
         {
             public float Duration;
-            public Ease Ease;
+            public LEase Ease;
 #if LITMOTION_COLLECTIONS_2_0_OR_NEWER
             public NativeAnimationCurve AnimationCurve;
 #else
@@ -201,7 +201,7 @@ namespace LitMotion
         {
             return Parameters.Ease switch
             {
-                Ease.CustomAnimationCurve => Parameters.AnimationCurve.Evaluate(value),
+                LEase.CustomAnimationCurve => Parameters.AnimationCurve.Evaluate(value),
                 _ => EaseUtility.Evaluate(value, Parameters.Ease)
             };
         }

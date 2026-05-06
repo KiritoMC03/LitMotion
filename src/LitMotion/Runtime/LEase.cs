@@ -3,7 +3,7 @@ namespace LitMotion
     /// <summary>
     /// Specifies the easing to apply to the animation.
     /// </summary>
-    public enum Ease
+    public enum LEase
     {
         Linear,
         InSine,

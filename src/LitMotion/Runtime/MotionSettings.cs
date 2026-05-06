@@ -35,7 +35,7 @@ namespace LitMotion
             init => options = value;
         }
 
-        public Ease Ease
+        public LEase Ease
         {
             get => ease;
             init => ease = value;
@@ -99,7 +99,7 @@ namespace LitMotion
         [SerializeField] TValue endValue;
         [SerializeField] float duration;
         [SerializeField] TOptions options;
-        [SerializeField] Ease ease;
+        [SerializeField] LEase ease;
         [SerializeField] AnimationCurve customEaseCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         [SerializeField] float delay;
         [SerializeField] DelayType delayType;
