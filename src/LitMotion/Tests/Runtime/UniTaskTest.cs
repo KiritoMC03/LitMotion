@@ -26,7 +26,7 @@ namespace LitMotion.Tests.Runtime
         {
             await LMotion.Create(0f, 10f, 1f)
                 .BindToUnityLogger()
-                .ToUniTask();
+                .ToUniTask(CancellationToken.None);
         });
 
         [UnityTest]
@@ -108,7 +108,7 @@ namespace LitMotion.Tests.Runtime
             {
                 await LMotion.Create(startValue, endValue, 0.1f)
                     .Bind(x => value = x)
-                    .ToUniTask();
+                    .ToUniTask(CancellationToken.None);
                 Assert.That(value, Is.EqualTo(10f).Using(FloatEqualityComparer.Instance));
             }
         });
@@ -120,7 +120,7 @@ namespace LitMotion.Tests.Runtime
             DelayedCall(0.2f, () => handle.Cancel()).Forget();
             try
             {
-                await handle.ToUniTask();
+                await handle.ToUniTask(CancellationToken.None);
             }
             catch (OperationCanceledException)
             {
@@ -136,7 +136,7 @@ namespace LitMotion.Tests.Runtime
             DelayedCall(0.2f, () => handle.Cancel()).Forget();
             try
             {
-                await handle.ToUniTask(CancelBehavior.Cancel, false);
+                await handle.ToUniTask(CancelBehavior.Cancel, false, CancellationToken.None);
             }
             catch (OperationCanceledException)
             {
@@ -159,7 +159,7 @@ namespace LitMotion.Tests.Runtime
 
             try
             {
-                await handle.ToUniTask();
+                await handle.ToUniTask(CancellationToken.None);
             }
             catch (OperationCanceledException)
             {
@@ -182,7 +182,7 @@ namespace LitMotion.Tests.Runtime
 
             var canceled = await LMotion.Create(10.0f, 0.0f, 1.0f)
                 .RunWithoutBinding()
-                .ToUniTask()
+                .ToUniTask(CancellationToken.None)
                 .SuppressCancellationThrow();
 
             Assert.IsFalse(canceled);
